@@ -4,12 +4,6 @@
     "@types/node": "^22.15.19"
   },
   "scripts": {
-    "test": "playwright test --headed",
-    "test:ui": "playwright test --ui"
-  },
-  "playwright": {
-    "timeout": 30000,
-    "retries": 0,
-    "reporter": "list"
+    "test": "playwright test"
   }
 }

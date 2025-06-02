@@ -11,6 +11,21 @@ test.describe.serial('Register page workflow', () => {
     await page.close();
   });
 
+   test('Register page displays correct static texts', async () => {
+    await page.goto('/register');
+    await expect(page.locator('h2:has-text("Create Account")')).toBeVisible();
+  });
+
+  test('Login page displays correct static texts', async () => {
+    await page.goto('/login');
+    await expect(page.locator('text=Sign in')).toBeVisible();
+  });
+
+  test('Home page displays Get Started button text', async () => {
+    await page.goto('/');
+    await expect(page.locator('text=Get Started')).toBeVisible();
+  });
+
   test('Home page loads and Get Started button is visible', async () => {
     await page.goto('/');
     await expect(page.locator('#get-started-button')).toBeVisible();
